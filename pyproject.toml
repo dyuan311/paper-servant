@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paper-servent"
+version = "0.1.0"
+description = "A powerful CLI tool for managing, reading, and organizing AI papers."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "agno[arxiv]>=2.5.3",
+    "openai>=2.21.0",
+    "pydantic>=2.12.5",
+    "pypdf>=6.7.2",
+    "python-dotenv>=1.2.1",
+    "requests>=2.32.5",
+    "typer>=0.24.1",
+    "rich>=13.7.0",
+    "fastapi>=0.131.0",
+    "uvicorn>=0.41.0",
+    "python-multipart>=0.0.22",
+    "ag-ui-protocol>=0.1.13",
+    "lancedb>=0.29.2",
+    "tantivy>=0.25.1",
+]
+
+[project.scripts]
+paper-servent = "main:app"
+psv = "main:app"
+
+[tool.setuptools]
+packages = ["agents", "tools"]
+py-modules = ["main"]
